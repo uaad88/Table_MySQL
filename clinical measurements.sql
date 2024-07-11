@@ -2,7 +2,6 @@
 create database `supervise_physical`;
 use `supervise_physical`;
 
-drop database`supervise_physical`;
 #(2. create tables)--------------------------
 create table`supervise_physical`.`data`(
 			#`ID` int auto_increment,
@@ -10,18 +9,17 @@ create table`supervise_physical`.`data`(
             `sbp_1` int(50),
             `dbp_1` int(50),
             `heart_rate` int(50),
-            primary key(`date`)
-);
+            primary key(`date`));
 
-#(3. insert the data)
+#(3. insert the data)------------------------
 insert into`supervise_physical`.`data`
 values ('2023-10-20 21:20:00',115,73,73),
-	   ('2023-10-21 08:05:00',119,75,60),
+       ('2023-10-21 08:05:00',119,75,60),
        ('2023-10-21 09:45:00',114,69,77),
        ('2023-10-21 21:40:00',115,66,75),
        ('2023-10-22 10:15:00',122,74,58),
        ('2023-10-22 11:05:00',117,72,79),
-	   ('2023-10-22 11:20:00',122,72,74),
+       ('2023-10-22 11:20:00',122,72,74),
        ('2023-10-23 07:45:00',127,80,67),
        ('2023-10-23 10:15:00',121,69,85),
        ('2023-10-23 21:10:00',124,78,85),
@@ -38,14 +36,13 @@ values ('2023-10-20 21:20:00',115,73,73),
        
        
        
-#(4. show tables)     
+#(4. show tables)------------------------     
 select *from `supervise_physical`.`data`;
 
-#(5. output data)
+#(5. output data)------------------------
 SELECT 'date', 'sbp_1', 'dbp_1','heart_rate'
 UNION ALL
-SELECT  date, sbp_1, dbp_1,heart_rate
-FROM `supervise_physical`.`data`
+SELECT  date, sbp_1, dbp_1,heart_rate FROM `supervise_physical`.`data`
 INTO OUTFILE 'C:/ProgramData/MySQL/MySQL Server 5.7/Uploads/20231026_output.csv'
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
