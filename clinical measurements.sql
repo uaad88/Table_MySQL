@@ -1,17 +1,16 @@
-#(1.create database)-------------------------
+#-----(1 create database)---------------------------
 create database `supervise_physical`;
 use `supervise_physical`;
 
-#(2. create tables)--------------------------
+#-----(2. create tables)--------------------------
 create table`supervise_physical`.`data`(
-			#`ID` int auto_increment,
             `date` datetime,
             `sbp_1` int(50),
             `dbp_1` int(50),
             `heart_rate` int(50),
             primary key(`date`));
 
-#(3. insert the data)------------------------
+#-----(3. insert the data)------------------------
 insert into`supervise_physical`.`data`
 values ('2023-10-20 21:20:00',115,73,73),
        ('2023-10-21 08:05:00',119,75,60),
@@ -33,10 +32,10 @@ values ('2023-10-20 21:20:00',115,73,73),
        ('2023-10-26 12:10:00',118,72,88),
        ('2023-10-26 21:00:00',131,76,82)
            
-#(4. show tables)------------------------     
+#-----(4. show tables)------------------------     
 select *from `supervise_physical`.`data`;
 
-#(5. output data)------------------------
+#-----(5. output data)------------------------
 SELECT 'date', 'sbp_1', 'dbp_1','heart_rate'
 UNION ALL
 SELECT  date, sbp_1, dbp_1,heart_rate FROM `supervise_physical`.`data`
