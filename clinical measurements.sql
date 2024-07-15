@@ -39,7 +39,7 @@ select *from `supervise_physical`.`data`;
 SELECT 'date', 'sbp_1', 'dbp_1','heart_rate'
 UNION ALL
 SELECT  date, sbp_1, dbp_1,heart_rate FROM `supervise_physical`.`data`
-INTO OUTFILE 'C:/ProgramData/MySQL/MySQL Server 5.7/Uploads/20231026_output.csv'
+INTO OUTFILE 'your storage space/.csv'
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
 LINES TERMINATED BY '\n';
